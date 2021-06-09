@@ -123,7 +123,7 @@ class GameRules {
      * To player use GameRules::applyToPlayer(Player) method
      */
     public function setBool(string $index, bool $value): void {
-        $this->gameRules[$index] = [GameRules::TYPE_BOOL, $value];
+        $this->gameRules[$index] = [GameRules::TYPE_BOOL, $value, false];
     }
 
     public function getBool(string $index): bool {
@@ -139,7 +139,7 @@ class GameRules {
      * To player use GameRules::applyToPlayer(Player) method
      */
     public function setInteger(string $index, int $value): void {
-        $this->gameRules[$index] = [GameRules::TYPE_INTEGER, $value];
+        $this->gameRules[$index] = [GameRules::TYPE_INTEGER, $value, false];
     }
 
     public function getInteger(string $index): int {
