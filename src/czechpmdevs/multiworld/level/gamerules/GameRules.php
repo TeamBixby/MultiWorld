@@ -222,13 +222,13 @@ class GameRules {
     public static function unserializeGameRules(CompoundTag $nbt): GameRules {
         return new GameRules(array_map(function (StringTag $stringTag): array {
             if($stringTag->getValue() == "true") {
-                return [GameRules::TYPE_BOOL, true];
+                return [GameRules::TYPE_BOOL, true, false];
             }
             if($stringTag->getValue() == "false") {
-                return [GameRules::TYPE_BOOL, false];
+                return [GameRules::TYPE_BOOL, false, false];
             }
 
-            return [GameRules::TYPE_INTEGER, (int)$stringTag->getValue()];
+            return [GameRules::TYPE_INTEGER, (int)$stringTag->getValue(), false];
         }, $nbt->getValue()));
     }
 
